@@ -27,12 +27,16 @@ public class Booking {
     @JoinColumn(name = "lodging_id", nullable = false)
     private Lodging lodging;
 
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
+    @Column(name = "updated_by", nullable = true)
     private String updatedBy;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Column(name = "scheduled_date", nullable = false)
     private Date scheduledDate;
 
     @Temporal(TemporalType.TIMESTAMP)
